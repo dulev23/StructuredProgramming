@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.23)
+project(StrukturnoProgramiranje)
+
+set(CMAKE_CXX_STANDARD 23)
+
+add_executable(StrukturnoProgramiranjeCpp Zadaca1.cpp)
+add_executable(StrukturnoProgramiranjeCpp1 Zadaca5.cpp)
+add_executable(StrukturnoProgramiranjeCpp2 Zadaca6.cpp)
+add_executable(StrukturnoProgramiranjeCpp3 Zadaca9.cpp)
+add_executable(StrukturnoProgramiranjeCpp4 Zadaca4.cpp)
+add_executable(StrukturnoProgramiranjeCpp5 Zadaca13.cpp)
+add_executable(StrukturnoProgramiranjeCpp6 Zadaca12.cpp)
+add_executable(StrukturnoProgramiranjeCpp7 Zadaca7.cpp)
+add_executable(StrukturnoProgramiranjeCpp8 Zadaca10.cpp)
+add_executable(StrukturnoProgramiranjeCpp9 Zadaca2.cpp)
+add_executable(StrukturnoProgramiranjeCpp10 ZadacaRandom.cpp)
