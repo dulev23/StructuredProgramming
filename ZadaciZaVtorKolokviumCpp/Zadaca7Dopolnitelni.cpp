@@ -1,36 +1,36 @@
 #include<iostream>
 
-using namespace std;
-
-void premesti(int a[], int n) {
-    int i, vrednost = 0;
+void premesti(int a[100], int n){
+    int index = 0, i;
     int b[n];
 
-    for (i = 0; i < n; ++i) {
-        if(a[i]>=0){
-            b[vrednost++]=a[i];
+    for (i = 0; i < n; i++) {
+        if(a[i] >= 0){
+            b[index++] = a[i];
         }
     }
 
-    for (i = 0; i < n; ++i) {
+    for (i = 0; i < n; i++) {
         if(a[i]<0){
-            b[vrednost++]=a[i];
+            b[index++] = a[i];
         }
     }
 
-    for (i = 0; i < n; ++i) {
-        a[i]=b[i];
+    for (i = 0; i < n; i++) {
+        a[i] = b[i];
     }
 
-    if(vrednost==0){
+    if(index == 0){
         return;
     }
 }
 
+using namespace std;
+
 int main() {
     int n;
-    cin >> n;
-    int a[n];
+    cin>>n;
+    int a[100];
     for (int i = 0; i < n; ++i) {
         cin >> a[i];
     }
@@ -38,7 +38,7 @@ int main() {
     premesti(a, n);
 
     for (int i = 0; i < n; ++i) {
-        cout << a[i]<<" ";
+        cout<<a[i]<<" ";
     }
     return 0;
 }

@@ -4,28 +4,24 @@
 using namespace std;
 
 int main() {
-    char sifra[10];
-    int tip;
-    float uplata;
-    float coefficient;
+    char kod[10], maxKod[10];
+    int uplata, tip, maxTip;
     cin >> uplata;
-    float maxCoefficient = 0, dobivka = 1;
-    char maxSifra[10];
-    int maxTip;
-    while (cin >> sifra >> tip >> coefficient) {
-        if (cin.get() == '#') {
+    float coeff;
+    float maxCoeff = 0;
+    float dobivka = 1;
+    while (cin >> kod >> tip >> coeff) {
+        if(cin.get()=='#'){
             break;
         }
-
-        if (coefficient > maxCoefficient) {
-            maxCoefficient = coefficient;
-            strcpy(maxSifra, sifra);
+        if (coeff > maxCoeff) {
+            maxCoeff = coeff;
+            strcpy(maxKod, kod);
             maxTip = tip;
         }
-        dobivka *= coefficient;
+        dobivka *= coeff;
     }
 
-    cout << maxSifra << " " << maxTip << " " << maxCoefficient << endl;
+    cout << maxKod << " " << maxTip << " " << maxCoeff << endl;
     cout << dobivka * uplata;
-
 }

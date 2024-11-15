@@ -4,48 +4,45 @@
 
 using namespace std;
 
-bool Condition(char *string) {
+bool condition(char *string) {
     int n = strlen(string);
-    int isPalindrome = 1, SpecChar = 0;
+    int palindromeFlag = 1, specCharFlag = 0;
     for (int i = 0; i < n / 2; ++i) {
         if (string[i] != string[n - i - 1]) {
-            isPalindrome = 0;
+            palindromeFlag = 0;
         }
     }
 
-    for (int i = 0; i <= n / 2; ++i) {
+    for (int i = 0; i < n; ++i) {
         if (!isalnum(string[i])) {
-            SpecChar = 1;
+            specCharFlag = 1;
         }
     }
-    return isPalindrome == 1 && SpecChar == 1;
+
+    return palindromeFlag && specCharFlag;
 }
 
 int main() {
     int n;
-    cin >> n;
-    int flag = 0;
+    cin>>n;
     char maxString[81];
     int maxLength = 0;
     for (int i = 0; i < n; ++i) {
         char line[81];
-        cin.getline(line, 81);
-        if (Condition(line)) {
-            if (strlen(line) > maxLength) {
+        cin.getline(line,81);
+        if(condition(line)){
+            if(strlen(line) > maxLength){
                 maxLength = strlen(line);
-                strcpy(maxString, line);
-                flag = 0;
+                strcpy(maxString,line);
             }
         }
     }
 
-    if (maxLength != 0) {
-        cout << maxString;
-    } else {
-        cout << "Nema!";
+    cout<<endl;
+    if(maxLength!=0){
+        cout<<maxString;
+    } else{
+        cout<<"Nema!";
     }
-
-
     return 0;
-
 }

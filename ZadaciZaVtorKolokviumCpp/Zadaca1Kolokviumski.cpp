@@ -4,6 +4,7 @@
 using namespace std;
 
 int isVowel(char c) {
+
     switch (tolower(c)) {
         case 'a':
         case 'e':
@@ -18,26 +19,24 @@ int isVowel(char c) {
 
 int main() {
     int counter = 0;
-    char c, p;
+    char c,p;
     c = p = '\0';
-    while (cin.get(c)) {
+    while(cin.get(c)){
         c = tolower(c);
-        if (c == '#') {
+        if(isdigit(c) || c == '#'){
             break;
         }
-
-        if (!p) {
+        if(!p){
             p = c;
             continue;
         }
-
-        if (isVowel(c) && isVowel(p)) {
+        if(isVowel(p) && isVowel(c)){
+            cout<<p<<c<<endl;
             counter++;
-            cout << p << c << endl;
         }
         p = c;
     }
 
-    cout << counter;
+    cout<<counter;
     return 0;
 }

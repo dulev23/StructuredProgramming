@@ -8,40 +8,39 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
+    int Number = (int) ceil(sqrt(n));
     int matrix[100][100];
-    int N = (int) ceil(sqrt(n));
-    int i, j;
-    int currentNumber = 1;
-
-    for (j = 0; j < N; j++) {
+    int current = 1;
+    int i,j;
+    for (j = 0; j < Number; ++j) {
         if (j % 2 == 0) {
-            for (i = 0; i < N; i++) {
-                if(currentNumber > n){
+            for (i = 0; i < Number; ++i) {
+                if (current > n) {
                     matrix[i][j] = 0;
                     continue;
                 } else {
-                    matrix[i][j] = currentNumber;
-                    currentNumber++;
+                    matrix[i][j] = current;
+                    current++;
                 }
             }
         } else {
-            for (i = N - 1; i >= 0; i--) {
-                if(currentNumber > n){
+            for (i = Number - 1; i >= 0; i--) {
+                if (current > n) {
                     matrix[i][j] = 0;
                     continue;
                 } else {
-                    matrix[i][j] = currentNumber;
-                    currentNumber++;
+                    matrix[i][j] = current;
+                    current++;
                 }
             }
         }
     }
 
-    for (i = 0; i < N; i++) {
-        for (j = 0; j < N; ++j) {
-            cout<<matrix[i][j]<<" ";
+    for (i = 0; i < Number; ++i) {
+        for (j = 0; j < Number; ++j) {
+            cout << matrix[i][j] << " ";
         }
-        cout<<endl;
+        cout << endl;
     }
     return 0;
 }
