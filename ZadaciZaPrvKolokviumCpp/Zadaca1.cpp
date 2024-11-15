@@ -10,20 +10,20 @@ using namespace std;
 int main() {
     int m, n;
     cin >> m >> n;
-    int flag = 0;
+    int flag;
     int min = -1;
-    for (int i = m; i < n; ++i) {
-        int num = i;
+    for (int i = m; i <= n; ++i) {
+        int number = i;
         flag = 0;
-        while (num > 0) {
-            int digit = num % 10;
+        while (number > 0) {
+            int digit = number % 10;
             if (digit % 2 != 0) {
                 flag = 1;
                 break;
             }
-            num /= 10;
+            number /= 10;
         }
-        if (!flag && (min == -1 || i < min)) {
+        if (flag==0 && (min > i || min == -1)) {
             min = i;
         }
     }

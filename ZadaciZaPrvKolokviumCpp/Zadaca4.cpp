@@ -1,20 +1,27 @@
+//Од стандарден влез се читаат знаци се додека не се прочита извичник.
+//Во вака внесениот текст се скриени цели броеви (помали од 100). Да се напише
+//програма што ќе ги прочита сите знаци и на излез ќе го испечати збирот на сите
+//броеви скриени во текстот.
+//
+//Напомена: cin во C++ ги игнорира празните места (space). За да не ги игнорира
+//потребно е да се додаде noskipws пред читањето на знакот
+//(пр. cin >> noskipws >> znak;)
+
 #include <iostream>
+
 using namespace std;
 
 int main() {
-    int broj = 0;
-    int zbir = 0;
-    char ch;
-
-    while (cin >> noskipws >> ch && ch!='!') {
-        if (ch >= '0' && ch <= '9') {
-            broj = broj * 10 + (ch - '0');
+    char character;
+    int sum = 0, number = 0;
+    while (cin >> noskipws >> character && character != '!') {
+        if (character >= '0' && character <= '9') {
+            number = number * 10 + (character - '0');
         } else {
-            zbir += broj;
-            broj = 0;
+            sum += number;
+            number = 0;
         }
     }
-    zbir += broj;
-    cout << zbir;
+    cout << sum + number;
     return 0;
 }
