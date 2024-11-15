@@ -1,2 +1,2 @@
 # StructuredProgramming
-codes for C language, solved exercises.
+Solved exercises using C and C++.
